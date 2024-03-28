@@ -2,7 +2,7 @@
  Event Review System
 
 # Guidance
- Clone Repository 
+ Clone Repository \n
  cd frontend > npm i
  cd backend > npm i
 
