@@ -5,7 +5,7 @@ const router = Router();
 
 router.post("/signup", async (req, res) => {
     const { email, password } = req.body;
-    console.log(req.body);
+    // console.log(req.body);
 
     // Check if email or password is missing
     if (!email || !password) {
@@ -24,7 +24,7 @@ router.post("/signup", async (req, res) => {
             email,
             password
         });
-        console.log(result);
+        // console.log(result);
         return res.status(201).json({ "msg": "User created successfully", "user": result });
     } catch (error) {
         console.error(error);

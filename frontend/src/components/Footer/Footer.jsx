@@ -7,14 +7,14 @@ export default function Footer() {
                 <div className="sm:flex sm:items-center sm:justify-between">
                     <span className="text-sm text-gray-500 sm:text-center mr-5">
                         2024 © 
-                        <a href="https://hiteshchoudhary.com/" className="hover:underline">
+                        <a href="" className="hover:underline">
                             Arya Shanish
                         </a>
                         . All Rights Reserved.
                     </span>
                     <div className="flex mt-4 space-x-5 sm:justify-center sm:mt-0">
                         
-                        <Link to="#" className="text-gray-500">
+                        <Link to="https://www.github.com/Aryashanish" className="text-gray-500">
                             <svg
                                 className="w-4 h-4"
                                 aria-hidden="true"

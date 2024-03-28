@@ -29,7 +29,7 @@ function Signup() {
     }
     axios.post("http://localhost:8000/user/signup" , user)
       .then((res) => {
-        console.log("Succesfull add data : ",res);
+        // console.log("Succesfull add data : ",res);
         navigate('/login');
       })
       .catch((err) => {

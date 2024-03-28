@@ -7,7 +7,6 @@ import axios from "axios";
 import { AiOutlineLike } from "react-icons/ai";
 import { MdOutlineBugReport } from "react-icons/md";
 import { MdBugReport } from "react-icons/md";
-import { AiFillLike } from "react-icons/ai";
 
 function FullBlogView() {
     const blogcontext = useContext(UserContext);
@@ -18,8 +17,9 @@ function FullBlogView() {
     const fetchData = async () => {
         try {
             const result = await axios.get("http://localhost:8000/event/" + blogcontext.bloginfo);
-            console.log("result : ",result);
+            // console.log("result : ",result);
             setBlog(result.data.blog);
+            // console.log("blog info",blog);
             if (JSON.stringify(result.data.comments) !== JSON.stringify(comment)) {
                 setComment(result.data.comments);
             }
@@ -42,16 +42,15 @@ function FullBlogView() {
 
     async function clickHandler(e) {
         e.preventDefault();
-        console.log(commenttmsg);
+        // console.log(commenttmsg);
         const userinfo = {
             "content": commenttmsg,
             "user_id": blogcontext.user._id,
         }
-        console.log(userinfo);
+        // console.log(userinfo);
         axios.post("http://localhost:8000/event/comment/" + blog._id , userinfo)
             .then((res) => {
-                console.log(res);
-                setComment("hello");
+                // console.log(res);
                 fetchData();
             })
             .catch((err) => {
@@ -97,7 +96,7 @@ function FullBlogView() {
                 </div>
                 <div className="mt-5">
                     <img
-                        src={blog.coverImgURL}
+                        src={blog ? blog.coverImgURL: "https://imgs.search.brave.com/t4AHxPlgrAcFoPfqEHO5U2w3OFZsFCNHBTzlPPSrL_4/rs:fit:500:0:0/g:ce/aHR0cHM6Ly9kMWNz/YXJrejhvYmU5dS5j/bG91ZGZyb250Lm5l/dC9wb3N0ZXJwcmV2/aWV3cy91cGNvbWlu/Zy1ldmVudHMtc2No/ZWR1bGUtdmlkZW8t/ZGVzaWduLXRlbXBs/YXRlLTc3NGU0YTU2/ZDYxNDRhZjc2NTM2/MmU4OGMxYmFjMWZk/LmpwZz90cz0xNjk4/MDMxOTI4"}
                         className="w-2/5 rounded-lg"
                     ></img>
                 </div>
@@ -134,7 +133,7 @@ function FullBlogView() {
                         <div>
                             <div className="text-medium font-medium text-black">
                                 Organized
-                                <p className=" text-slate-500">By {blogcontext.user ? blogcontext.user.email.split("@")[0] : 'Anonymous'}</p>
+                                <p className=" text-slate-500">By {'Fitpage User'}</p>
                             </div>
                         </div>
                     </div>
@@ -146,10 +145,11 @@ function FullBlogView() {
                             <Input
                                 type="text"
                                 onChange={onchangeHandler} 
-                                name = "content"
+                                name="content"
+                                placeholder="Review Here"
                                 /> 
                             <div className="w-24">
-                                <Button value="Review" />
+                                <Button type="submit" value="Review" />
                             </div>
                         </form>
                     </div>

@@ -11,8 +11,8 @@ function App() {
       <Header />
       <div className='show'>
         <Outlet />
+        <Footer />
       </div>
-      <Footer />
     </UserProvider>
   )
 }

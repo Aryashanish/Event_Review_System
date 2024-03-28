@@ -27,9 +27,9 @@ function Login() {
 
     axios.post("http://localhost:8000/user/signin" , userinfo)
       .then((res) => {
-        console.log("Succesfull login ", res.data.msg);
+        // console.log("Succesfull login ", res.data.msg);
         currentUserinfo.setUser(currentUserinfo.user = res.data.msg);
-        console.log(currentUserinfo.user);
+        // console.log(currentUserinfo.user);
         navigate('/event');
       })
       .catch((err) => {

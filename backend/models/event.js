@@ -13,6 +13,7 @@ const eventSchema = new mongoose.Schema(
         coverImgURL: {
             type: String,
             required: false,
+            default: "https://imgs.search.brave.com/t4AHxPlgrAcFoPfqEHO5U2w3OFZsFCNHBTzlPPSrL_4/rs:fit:500:0:0/g:ce/aHR0cHM6Ly9kMWNz/YXJrejhvYmU5dS5j/bG91ZGZyb250Lm5l/dC9wb3N0ZXJwcmV2/aWV3cy91cGNvbWlu/Zy1ldmVudHMtc2No/ZWR1bGUtdmlkZW8t/ZGVzaWduLXRlbXBs/YXRlLTc3NGU0YTU2/ZDYxNDRhZjc2NTM2/MmU4OGMxYmFjMWZk/LmpwZz90cz0xNjk4/MDMxOTI4"
         },
         like: {
             type: Number,

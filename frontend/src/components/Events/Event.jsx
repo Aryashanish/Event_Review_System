@@ -10,7 +10,7 @@ function Event() {
             const response = await axios.get('http://localhost:8000/');
             const events = response.data.events;
             setTotalblog(events);
-            console.log(events);
+            // console.log(events);
         } catch (err) {
             console.log(err);
         }

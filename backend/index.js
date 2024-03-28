@@ -11,7 +11,7 @@ const { eventRouter } = require("./routes/event");
 //connect database
 mongoose.connect("mongodb://localhost:27017/Event-Review-System")
 .then(() => {
-    console.log("Connection Successfull");
+    console.log("Database Connection Successfull");
 }).catch((err) => {
     console.log("Not Able to Connect ", err);
 });

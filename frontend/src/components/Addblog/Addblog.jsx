@@ -31,7 +31,7 @@ function Addblog() {
         console.log(eventInfo);
         axios.post('http://localhost:8000/event', eventInfo)
             .then((res) => {
-                console.log("Successfull post", res.data.msg);
+                // console.log("Successfull post", res.data.msg);
                 navigate('/event');
             })
             .catch((err) => {

@@ -27,7 +27,7 @@ const storage = multer.diskStorage({
 eventRouter.get("/:id", async (req, res) => {
   const blog = await eventModel.findById(req.params.id).populate("createdBy");
   const comments = await commentModel.find({ eventId: req.params.id }).populate("createdBy");
-  console.log("com", comments);
+  // console.log("com", comments);
   return res.status(201).json({
     user: req.user,
     message: '',
@@ -46,13 +46,13 @@ eventRouter.post("/", async (req, res) => {
         like: 0,
         report: 0,
     })
-    console.log(result);
+    // console.log(result);
     res.status(201).json({"msg":result});
 })
 
 
 eventRouter.post("/comment/:blogId", async (req, res) => {
-  console.log(req.body);
+  // console.log(req.body);
   const result = await commentModel.create({
     content: req.body.content,
     eventId: req.params.blogId,
